@@ -1,0 +1,13 @@
+<% flash.each do |key, value| %>
+  <% unless value.blank? %>
+    <div class="container">
+      <% if key.to_s == "error" %>
+        <div class="alert alert-danger"><%= value %></div>
+      <% elsif key.to_s == "notice" || key.to_s == "success" %>
+        <div class="alert alert-success"><%= value %></div>
+      <% else %>
+        <div class="alert alert-warning"><%= value %></div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
